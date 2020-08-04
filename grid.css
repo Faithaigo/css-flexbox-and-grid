@@ -4,41 +4,58 @@ Keyword colors can be found at http://colours.neilorangepeel.com/
 
 /* border-box fix */
 html {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
+
 *, *:before, *:after {
-  box-sizing: inherit;
+    box-sizing: inherit;
 }
 
 body {
-  padding: 0;
-  margin: 0;
+    padding: 0;
+    margin: 0;
 }
+
 h1, h2 {
-  text-transform: uppercase;
+    text-transform: uppercase;
 }
 
 /* Add padding to all of the .container child elements */
 .container > * {
-  padding: 20px;
+    padding: 20px;
 }
+
 .container {
-  color: white;
-  font-family: helvetica, arial, sans-serif;
+    color: white;
+    font-family: helvetica, arial, sans-serif;
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr)); /* 12 columns, min 0(noempty column when there is no content)*/
 }
 
 header {
-  background: skyblue;
+    background: skyblue;
+    grid-column: 1 /13;
 }
+
 main {
-  background: slategray;
+    background: slategray;
+    grid-column: 4/10;
 }
+
 nav {
-  background: cadetblue;
+    background: cadetblue;
+    grid-column: 1/4;
 }
+
 aside {
-  background: seagreen;
+    background: seagreen;
+    grid-column: 10/13;
 }
+main , nav , aside{
+    grid-row: 2 / 4 ;
+}
+
 footer {
-  background: darkslateblue;
+    background: darkslateblue;
+    grid-column: 1 /13;
 }
